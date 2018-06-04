@@ -4,9 +4,12 @@
 Multi Purpose Performance Testing Framework 
 
 
-# MPPTF 개요
+# MPPTF 개요 및 목적
 
-어떠한 모듈을 대상으로 Performance 를 테스트 할때는 single thread 부터 multi thread 의 형태로 테스트를 진행한다. 테스트 시에는 생성, 초기화, 런닝, 마무리 단계를 거처 성능 수치를 측정하게 되는데 이러한 일련의 반복되는 기능을 Framework 로 구성하여, 사용자는 test core 부분만 작성하도록 하는것을 목적으로 제작되었다.
+MPPTF는 성능 및 Latency 측정을 반복적인 개발없이 수행할 수 있도록 만든 일종의 프레임워크이다. 사용자는 성능테스트를 위한 모듈을 Shared Library 형태로 만들고 이를 Runner 라는 프로그램에서 호출함으로 수행되며, 다음과 같은 반복적인 일들을 자동화 해준다. 
+
+* Thread 를 통한 Throughput 측정 
+* 각각의 Thread간의 Latency 측정 
 
 본 문서는 MPPTF 의 구조와 동작원리등을 설명하며 사용자가 본 Framework 를 이용하여 간단한 샘플을 작성할 수 있도록 설명을 한다.
 
