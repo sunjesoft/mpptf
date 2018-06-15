@@ -1,4 +1,6 @@
 
+include Makefile.$(shell uname)
+
 CXX_FLAGS=-std=c++11 -O2 -W -Wall -fpic 
 CXX=g++
 INC= -I. -I ./timer

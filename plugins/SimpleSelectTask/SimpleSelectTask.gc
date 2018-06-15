@@ -44,7 +44,7 @@ void SimpleSelectTask :: Run (int aIndex)
     EXEC SQL END   DECLARE SECTION ; 
 
     // Stop Complain ...
-    aIndex = aIndex; 
+    aIndex++; 
     setConnName ( sConnName ) ;
     
     EXEC SQL AT :sConnName SELECT 1 into :sValue FROM DUAL ;

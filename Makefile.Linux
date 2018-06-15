@@ -1,0 +1,3 @@
+
+SHARED_FLAGS=--shared
+SHARED_LIB_EXT=so

@@ -1,0 +1,4 @@
+
+SHARED_CFLAGS=-dynamiclib
+SHARED_LIB_EXT=dylib
+CXX_LIBS=-lc++

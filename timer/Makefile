@@ -1,14 +1,16 @@
 
+
+include ../Makefile.$(shell uname)
 #CXX_FLAGS=-std=c++11 -g -O0 -W -Wall
 CXX_FLAGS=-std=c++11 -O2 -W -Wall 
 INC= -I.  
 LIB=-lMultiPointTimer
 LPATH= -L.
 all: 
-	g++ -fpic -c ${CXX_FLAGS} ${INC} ${LIB} ${LPATH} MultiPointTimer.cc
-	g++ -fpic -c ${CXX_FLAGS} ${INC} ${LIB} ${LPATH} MultiPointTimerC.cc
+	g++ -fpic -c ${CXX_FLAGS} ${INC} MultiPointTimer.cc
+	g++ -fpic -c ${CXX_FLAGS} ${INC} MultiPointTimerC.cc
 
-	gcc -shared -o libMultiPointTimer.so MultiPointTimerC.o  MultiPointTimer.o
+	gcc $(SHARED_CFLAGS) -o libMultiPointTimer.$(SHARED_LIB_EXT) MultiPointTimerC.o  MultiPointTimer.o $(CXX_LIBS)
 	ar rcs libMultiPointTimer.a MultiPointTimerC.o MultiPointTimer.o
 
 
